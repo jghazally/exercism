@@ -1,21 +1,12 @@
 class Hamming
 
-  VERSION = 1
+  VERSION = 3
 
-  def self.compute(strandA, strandB)
-    hamCount = 0
+  def self.compute(strand_a, strand_b)
 
-    if ( strandA.length != strandB.length ) 
-      raise(ArgumentError)
-    end
+    raise ArgumentError unless strand_a.length == strand_b.length
 
-    strandB = strandB.split("")
-    strandA.split("").each_with_index do |i, index|
-      if ( i != strandB[index] )
-        hamCount += 1
-      end
-    end
-    return hamCount
+    strand_a.each_char.with_index.count { |i, index| ( i != strand_b[index] ) }
   end
 
 end
