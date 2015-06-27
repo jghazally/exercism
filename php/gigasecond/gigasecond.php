@@ -1,11 +1,7 @@
 <?php
 
-function from($date) {
-	$timestamp = $date->getTimestamp();
-
-	$gigaseconds = $timestamp + pow(10,9);
-
-	$date->setTimestamp($gigaseconds);
-
+function from($date)
+{
+	$date->add(new DateInterval('PT' . pow(10, 9) . 'S'));
 	return $date;
 }
