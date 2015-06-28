@@ -2,9 +2,8 @@ require 'time'
 
 # Gigasecond module computes a given dates gigasecond
 module Gigasecond
-  VERSION = 1
+  VERSION = 2
   def self.from(date)
-    date += 100_000_000_0
-    date
+    date += 1_000_000_000
   end
 end
