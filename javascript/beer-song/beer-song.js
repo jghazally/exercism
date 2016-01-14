@@ -34,9 +34,9 @@ var BeerSong = function() {
 			end--;
 		}
 
-		for ( var i = start; i > end; i--  ) {
-			output += this.verse(i);
-			if ( (i - 1) > end ) {
+		for ( start; start > end; start--  ) {
+			output += this.verse(start);
+			if ( (start - 1) > end ) {
 				output += '\n';
 			}
 		}
