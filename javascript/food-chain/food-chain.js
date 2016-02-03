@@ -21,6 +21,15 @@ var FoodChain = function() {
 	];
 };
 
+FoodChain.prototype.verses = function(verse1, verse2) {
+	output = '';
+	for ( verse1; verse1 <= verse2; verse1++ ) {
+		output += this.verse(verse1);
+		output += '\n';
+	}
+	return output;
+};
+
 FoodChain.prototype.verse = function(verse) {
 	verse = verse -1;
 	output = [];
