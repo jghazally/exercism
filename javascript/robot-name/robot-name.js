@@ -2,7 +2,6 @@ var UsedRobotNames  = [];
 
 var Robot = function() {
 	this.alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	this.numeric = '1234567890';
 
 	this.name = this.generateName();
 
@@ -15,11 +14,9 @@ Robot.prototype.generateName = function() {
 		this.name += this.alpha.charAt(Math.floor(Math.random() * this.alpha.length));
 	}
 
-	for ( i = 0; i < 3; i++ ) {
-		this.name += this.numeric.charAt(Math.floor(Math.random() * this.numeric.length));
-	}
+	this.name += Math.floor(Math.random() * 999);
 
-	if ( typeof UsedRobotNames[this.name] !== 'undefined' ) {
+	if ( UsedRobotNames[this.name] ) {
 		return this.generateName();
 	}
 
